@@ -1,0 +1,148 @@
+.cart-page {
+width: 100%;
+padding: 5%;
+font-weight: bold;
+border: 1px solid red;
+font-size: 18px;
+}
+.cart-layout{
+  width: 100%;
+  padding: 0px 5%;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid black;
+  gap: 30px;
+}
+.cartItem{
+  width: 100%;
+}
+.cart-List{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0px  2px 10px rgb(229, 229, 229) ;
+}
+.cartleft{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.cart-image{
+  width: 60px;
+  height: 60px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+.cartDet{
+  width: max-content;
+}
+.cartDet h3{
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.cartDet p{
+  font-size: 1rem;
+  color: var( --color-primary);
+  font-weight: 700;
+
+}
+
+.cartright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.quantity-control{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.quantity-control span{
+  font-size: 1rem;
+  color: var( --color-text-light);
+}
+.qty-btn{
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  background-color: var(  --color-white);
+  border: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(228, 228, 228);
+}
+.delete-btn {
+background: none;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: red;
+}
+
+
+/* Order Summary */
+.order-summary {
+background: white;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(69, 69, 69, 0.1);
+height: fit-content;
+}
+
+
+.order-summary h2 {
+margin-bottom: 20px;
+}
+
+
+.summary-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+font-size: 16px;
+}
+
+
+.total-row {
+font-size: 18px;
+margin-top: 15px;
+}
+
+
+.total-amount {
+color: #c68b4a;
+font-size: 20px;
+}
+
+
+.checkout-btn {
+width: 100%;
+padding: 12px;
+margin-top: 20px;
+border: none;
+background: #c68b4a;
+color: white;
+font-size: 16px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+
+.checkout-btn:hover {
+background: #a97439;
+}
+
+
+/* Responsive */

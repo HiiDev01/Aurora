@@ -1,0 +1,262 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Aurelia Sofa",
+      "category": "Sofa",
+      "price": 2450,
+      "colors": [
+        "cream",
+        "charcoal",
+        "forest-green"
+      ],
+      "material": "Italian Leather",
+      "rating": 4.9,
+      "stock": 12,
+      "thumbnail": "/images/products/sofa_aurelia.jpg",
+      "images": [
+        "/images/products/sofa_aurelia_1.jpg",
+        "/images/products/sofa_aurelia_2.jpg"
+      ],
+      "description": "A premium Italian leather sofa handcrafted for timeless luxury. Features ergonomic cushioning and a solid walnut wood frame."
+    },
+    {
+      "id": "2",
+      "name": "Luxe Orion Bed",
+      "category": "Bed",
+      "price": 3100,
+      "colors": [
+        "white",
+        "dark-brown"
+      ],
+      "material": "Velvet + Oak Wood",
+      "rating": 4.8,
+      "stock": 8,
+      "thumbnail": "/images/products/orion_bed.jpg",
+      "images": [
+        "/images/products/orion_bed_1.jpg",
+        "/images/products/orion_bed_2.jpg"
+      ],
+      "description": "A modern luxury king-size bed upholstered in soft velvet with a premium oak wood base."
+    },
+    {
+      "id": "3",
+      "name": "Marbella Dining Table",
+      "category": "Table",
+      "price": 1800,
+      "colors": [
+        "oak",
+        "black"
+      ],
+      "material": "Granite + Oak",
+      "rating": 4.7,
+      "stock": 5,
+      "thumbnail": "/images/products/marbella_table.jpg",
+      "images": [
+        "/images/products/marbella_table_1.jpg",
+        "/images/products/marbella_table_2.jpg"
+      ],
+      "description": "A handcrafted granite dining table with a polished oak base. Seats up to 6 people comfortably."
+    },
+    {
+      "id": "4",
+      "name": "Serenity Lounge Chair",
+      "category": "Chair",
+      "price": 950,
+      "colors": [
+        "beige",
+        "black",
+        "navy-blue"
+      ],
+      "material": "Soft Linen",
+      "rating": 4.6,
+      "stock": 20,
+      "thumbnail": "/images/products/serenity_chair.jpg",
+      "images": [
+        "/images/products/serenity_chair_1.jpg",
+        "/images/products/serenity_chair_2.jpg"
+      ],
+      "description": "A minimalist yet luxurious lounge chair with soft linen upholstery for maximum comfort."
+    },
+    {
+      "id": "5",
+      "name": "Nova Bookshelf",
+      "category": "Storage",
+      "price": 1200,
+      "colors": [
+        "walnut",
+        "black"
+      ],
+      "material": "Walnut Wood",
+      "rating": 4.7,
+      "stock": 14,
+      "thumbnail": "/images/products/nova_bookshelf.jpg",
+      "images": [
+        "/images/products/nova_bookshelf_1.jpg",
+        "/images/products/nova_bookshelf_2.jpg"
+      ],
+      "description": "A sleek walnut wood bookshelf featuring modern Scandinavian lines and durable shelves."
+    },
+    {
+      "id": "6",
+      "name": "Elysium Coffee Table",
+      "category": "Table",
+      "price": 680,
+      "colors": [
+        "glass",
+        "gold",
+        "black"
+      ],
+      "material": "Tempered Glass + Steel",
+      "rating": 4.8,
+      "stock": 18,
+      "thumbnail": "/images/products/elysium_coffee.jpg",
+      "images": [
+        "/images/products/elysium_coffee_1.jpg",
+        "/images/products/elysium_coffee_2.jpg"
+      ],
+      "description": "A luxury glass-top coffee table with gold-finish steel legs for a modern premium look."
+    },
+    {
+      "id": "7",
+      "name": "Velora Accent Chair",
+      "category": "Chair",
+      "price": 720,
+      "colors": [
+        "pink",
+        "cream",
+        "gray"
+      ],
+      "material": "Brushed Velvet",
+      "rating": 4.5,
+      "stock": 10,
+      "thumbnail": "/images/products/velora_chair.jpg",
+      "images": [
+        "/images/products/velora_chair_1.jpg",
+        "/images/products/velora_chair_2.jpg"
+      ],
+      "description": "A cozy velvet accent chair with a curved silhouette and premium cushioning."
+    },
+    {
+      "id": "8",
+      "name": "Opulence Wardrobe",
+      "category": "Storage",
+      "price": 2950,
+      "colors": [
+        "walnut",
+        "white"
+      ],
+      "material": "Walnut Wood + Mirror Glass",
+      "rating": 4.9,
+      "stock": 6,
+      "thumbnail": "/images/products/opulence_wardrobe.jpg",
+      "images": [
+        "/images/products/opulence_wardrobe_1.jpg",
+        "/images/products/opulence_wardrobe_2.jpg"
+      ],
+      "description": "A luxury 3-door wardrobe with soft-close drawers, mirror panels, and a premium walnut finish."
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Sofas"
+    },
+    {
+      "id": "2",
+      "name": "Chairs"
+    },
+    {
+      "id": "3",
+      "name": "Tables"
+    },
+    {
+      "id": "4",
+      "name": "Beds"
+    },
+    {
+      "id": "5",
+      "name": "Storage"
+    }
+  ],
+  "banners": [
+    {
+      "id": "1",
+      "title": "Luxury Redefined",
+      "subtitle": "Modern Furniture for Modern Homes",
+      "image": "/images/banners/banner_hero.jpg"
+    },
+    {
+      "id": "2",
+      "title": "2025 Premium Collection",
+      "subtitle": "Handcrafted elegance and iconic designs",
+      "image": "/images/banners/banner_collection.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Lesley",
+      "email": "lesley@example.com",
+      "password": "123456"
+    }
+  ],
+  "orders": [
+    {
+      "id": "e0ec",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Luxe Orion Bed",
+          "category": "Bed",
+          "price": 3100,
+          "colors": [
+            "white",
+            "dark-brown"
+          ],
+          "material": "Velvet + Oak Wood",
+          "rating": 4.8,
+          "stock": 8,
+          "thumbnail": "/images/products/orion_bed.jpg",
+          "images": [
+            "/images/products/orion_bed_1.jpg",
+            "/images/products/orion_bed_2.jpg"
+          ],
+          "description": "A modern luxury king-size bed upholstered in soft velvet with a premium oak wood base.",
+          "qty": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2025-11-27T00:20:42.284Z"
+    },
+    {
+      "id": "a839",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Luxe Orion Bed",
+          "category": "Bed",
+          "price": 3100,
+          "colors": [
+            "white",
+            "dark-brown"
+          ],
+          "material": "Velvet + Oak Wood",
+          "rating": 4.8,
+          "stock": 8,
+          "thumbnail": "/images/products/orion_bed.jpg",
+          "images": [
+            "/images/products/orion_bed_1.jpg",
+            "/images/products/orion_bed_2.jpg"
+          ],
+          "description": "A modern luxury king-size bed upholstered in soft velvet with a premium oak wood base.",
+          "qty": 3
+        }
+      ],
+      "total": 9300,
+      "createdAt": "2025-11-27T02:04:41.668Z"
+    }
+  ]
+}
