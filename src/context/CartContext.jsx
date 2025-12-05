@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(()=>{
+  const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem("cart");
     return saved ? JSON.parse(saved) : [];
   });
@@ -12,23 +12,32 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  // Add item to cart
+
+  // Convert price to a number
+  const normalizePrice = (price) => {
+    if (typeof price === "object" && price !== null) {
+      return price.amount || 0;
+    }
+    return Number(price) || 0;
+  };
+
   const addToCart = (product) => {
     const exists = cart.find((item) => item.id === product.id);
+    const numericPrice = normalizePrice(product.price);
 
     if (exists) {
-      // update quantity
       setCart(
         cart.map((item) =>
           item.id === product.id
-            ? { ...item, qty: item.qty + 1 }
+            ? { ...item, qty: item.qty + 1, price: normalizePrice(item.price) }
             : item
         )
       );
     } else {
-      setCart([...cart, { ...product, qty: 1 }]);
+      setCart([...cart, { ...product, qty: 1, price: numericPrice }]);
     }
-     toast.success("item added to cart");
+
+    toast.success("Item added to cart");
   };
 
   const increaseQty = (id) => {
@@ -41,9 +50,9 @@ export const CartProvider = ({ children }) => {
 
   const decreaseQty = (id) => {
     const product = cart.find((item) => item.id === id);
+    if (!product) return;
 
     if (product.qty === 1) {
-      // Remove item if decreasing below 1
       setCart(cart.filter((item) => item.id !== id));
     } else {
       setCart(
@@ -54,20 +63,25 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // remove item
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  // clear entire cart
   const clearCart = () => setCart([]);
 
-  //number of cart item to show in nav
-  const cartCount = cart.length;
+  const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, increaseQty,decreaseQty,cartCount }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        increaseQty,
+        decreaseQty,
+        cartCount,
+      }}
     >
       {children}
     </CartContext.Provider>

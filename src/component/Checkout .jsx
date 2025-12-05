@@ -24,7 +24,7 @@ const Checkout = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/orders", {
+      const response = await fetch("https://fakestoreapi.com/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -48,7 +48,22 @@ const Checkout = () => {
 
   return (
     <div>
-      <button onClick={handleCheckout}>Confirm Checkout</button>
+      <button style={
+        {backgroundColor: "var(  --color-primary)",
+          width: "100%",
+          padding: "15px 10px",
+          color: "var(--color-white)",
+          fontFamily: "var(--font-two)",
+          fontWeight: "500",
+          textTransform: "capitalize",
+          fontSize: "1rem",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer"
+        }}
+        onClick={handleCheckout}
+        >
+        Confirm Checkout</button>
     </div>
   );
 };

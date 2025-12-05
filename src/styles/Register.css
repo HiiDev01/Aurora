@@ -86,3 +86,53 @@
 .login-link:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .register-card {
+    width: 90%;
+    padding: 28px;
+  }
+
+  .register-title {
+    font-size: 22px;
+  }
+
+  .register-btn {
+    font-size: 15px;
+    padding: 11px;
+  }
+}
+
+/* Mobile Phones (≤ 480px) */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 15px;
+  }
+
+  .register-card {
+    width: 100%;
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .register-title {
+    font-size: 20px;
+  }
+
+  .register-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .register-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .register-footer {
+    font-size: 13px;
+  }
+
+  .reg-icon {
+    font-size: 14px;
+  }
+}

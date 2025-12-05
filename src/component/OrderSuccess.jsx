@@ -7,24 +7,11 @@ const OrderSuccess = () => {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-    const fetchOrder = async () => {
-      const res = await fetch(`http://localhost:8080/orders/${id}`);
-      if (!res.ok) return;
-
-      const data = await res.json();
-
-      if (!data.total) {
-        data.total = data.items.reduce((sum, item) => {
-          return sum + item.price * item.qty;
-        }, 0);
-      }
-
-
-      setOrder(data);
-    };
-
-    fetchOrder();
-  }, [id]);
+    const savedOrder = localStorage.getItem("cart");
+    if (savedOrder) {
+      setOrder(JSON.parse(savedOrder));
+    }
+  }, []);
 
   if (!order) {
     return (

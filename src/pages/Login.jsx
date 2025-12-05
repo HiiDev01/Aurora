@@ -3,6 +3,7 @@ import "../styles/Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import { supabase } from "../config/SupabaseClient";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,25 +24,65 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
         // request to json-server
-    const res = await fetch(
-      `http://localhost:8080/users?email=${form.email}&password=${form.password}`
-    );
-    const data = await res.json();
+    try {
+      const {data, error} = await supabase.auth.signInWithPassword({
+        email: form.email,
+        password: form.password
+      });
+      if (error) {
+        if (error.message.includes("invalid login credentials")) {
+          toast.error("Incorrect password or email");
+          setError("Incorrect password or email");
+          return;
+        }
 
-    // If no user found =>>>> error
-    if (data.length === 0) {
-      setError("Invalid email or password");
+       
+        toast.error(error.message);
+        setError(error.message);
+        return;
+      }
+
+
+      if (!data.user) {
+        toast.error("Email not found");
+        setError("Email not found");
+        return;
+      }
+      // Saving user in AuthContext
+      login(data.user);
+      toast.success("Login successful");
+    
+      // Redirect to previous page or home
+      const redirectTo = location.state?.from || "/";
+      navigate(redirectTo);
+
+    } catch (error) {
+      console.log(error, "error singing in")
+    }
+
+
+  };
+  const handleDemoLogin = async () => {
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: "demouser@example.com",
+      password: "123456"
+    });
+
+    if (error) {
+      toast.error(error.message);
       return;
     }
 
-    //correct user found =>>>> save user to AuthContext
-    login(data[0]);
-    toast.success("login successful");
+    login(data.user);
+    toast.success("Logged in as Demo User");
 
-    // Redirect to previous page or home
-    const redirectTo = location.state?.from || "/";
-    navigate(redirectTo);
-  };
+    navigate("/");
+  } catch (err) {
+    console.error("Demo login error:", err);
+    toast.error("Unable to login demo user");
+  }
+};
 
   return (
     <div className="login-container">
@@ -71,6 +112,13 @@ const Login = () => {
 
           <button className="login-btn" type="submit">
             ➜ Login
+          </button>
+          <button 
+            className="login-btn" 
+            type="submit" 
+            onClick={handleDemoLogin}
+          >
+            Login  Demo
           </button>
         </form>
 

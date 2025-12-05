@@ -3,6 +3,7 @@ import "../styles/Register.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import { supabase } from "../config/SupabaseClient";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -21,45 +22,44 @@ const Register = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    setError("")
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: form.email,
+        password: form.password,
+        options: {
+          data: {
+            full_name: form.fullname
+          }
+        }
+      });
 
-    // Checking if email already exists
-    const check = await fetch(
-      `http://localhost:8080/users?email=${form.email}`
-    );
-    const existingUser = await check.json();
+      if (error) {
+        if (error.code === "23505") {
+          setError("Email already exists");
+          toast.error("Email already exists");
+          return;
+        }
+  
+        setError(error.message);
+        toast.error(error.message);
+        return;
+      }
 
-    if (existingUser.length > 0) {
-      setError("Email already registered");
-      toast.error("there is an existing user with this email")
-      return;
+      toast.success("Successfully registered!");
+      if(data.user){
+        login(data.user);
+      }
+      
+      const redirectTo = location.state?.from || "/";
+      navigate(redirectTo);
+
+    } catch (error) {
+      console.log(error);
+      setError("Something went wrong");
+      toast.error("Something went wrong");
     }
 
-    // Adding new user to json db
-    const newUser = {
-      fullname: form.fullname,
-      email: form.email,
-      password: form.password
-    };
-
-    const res = await fetch("http://localhost:8080/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser)
-    });
-
-    if (!res.ok) {
-      setError("Registration failed. Try again.");
-      return;
-    }
-
-    const savedUser = await res.json();
-
-    //Auto-login newly registered user
-    login(savedUser);
-    toast.success("successfully registered");
-    //Redirecting back to page before register OR home
-    const redirectTo = location.state?.from || "/";
-    navigate(redirectTo);
   };
 
   return (

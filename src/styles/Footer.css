@@ -71,3 +71,53 @@
   font-size: 14px;
   color: #9aa3b1;
 }
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 35px 25px;
+  }
+
+  .footer-inner {
+    gap: 30px;
+  }
+
+  .footer-col h3 {
+    font-size: 15px;
+  }
+}
+
+/* Mobile landscape / Large phones */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    min-width: 100%;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .footer-text,
+  .footer-copy {
+    font-size: 13px;
+  }
+
+  .footer-col h3 {
+    font-size: 15px;
+  }
+}

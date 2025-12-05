@@ -11,6 +11,7 @@
     "start": "json-server --watch db.json --port 8080"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.86.1",
     "lucide": "^0.554.0",
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",

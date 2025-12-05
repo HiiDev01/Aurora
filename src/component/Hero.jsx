@@ -6,9 +6,9 @@ const Hero = () => {
     <section className='hero'>
       <div className='heroCon'>
         <div>
-          <h1>Design Your <br></br> Comfort</h1>
-          <p>Timeless furniture crafted with passion and sustainable materials.</p>
-          <a href="">shop collection</a>
+          <h1>Quality Quicky <br></br> Thrift </h1>
+          <p>Rock the Thrift and match the Quality, enjoy Quality,<br></br> passion and sustainable materials.</p>
+          <a href="">start shopping</a>
         </div>
       </div>
     </section>
